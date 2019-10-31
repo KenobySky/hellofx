@@ -29,10 +29,6 @@ dependencies {
     compile "com.mchange:c3p0:0.9.5.4"
     compile "com.sun.mail:javax.mail:1.6.2"
     compile "commons-validator:commons-validator:1.6"
-    compile 'org.openjfx:javafx-base:11:win'
-    compile 'org.openjfx:javafx-controls:11:win'
-    compile 'org.openjfx:javafx-fxml:11:win'
-    compile 'org.openjfx:javafx-graphics:11:win'
     
 }
 
