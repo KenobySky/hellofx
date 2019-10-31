@@ -1,0 +1,7 @@
+HelloFX -> a:
+    8:8:void <init>() -> <init>
+    12:18:void start(javafx.stage.Stage) -> start
+    21:22:void main(java.lang.String[]) -> a
+Main -> Main:
+    11:11:void <init>() -> <init>
+    13:14:void main(java.lang.String[]) -> main

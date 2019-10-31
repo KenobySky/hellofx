@@ -1,0 +1,143 @@
+// 1. Include proguard dependency
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'net.sf.proguard:proguard-gradle:6.2.0'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+    id 'org.beryx.runtime' version '1.7.0'
+    id "com.github.johnrengelman.shadow" version "5.1.0"
+
+}
+
+
+dependencies {
+    compile "org.controlsfx:controlsfx:11.0.0"
+    compile "eu.hansolo:tilesfx:11.13"
+    compile "com.jfoenix:jfoenix:9.0.9"
+    compile "org.apache.httpcomponents:httpclient:4.5.9"
+    compile "org.json:json:20180813"
+    compile "mysql:mysql-connector-java:8.0.17"
+    compile "org.jasypt:jasypt:1.9.3"
+    compile "com.mchange:c3p0:0.9.5.4"
+    compile "com.sun.mail:javax.mail:1.6.2"
+    compile "commons-validator:commons-validator:1.6"
+    compile 'org.openjfx:javafx-base:11:win'
+    compile 'org.openjfx:javafx-controls:11:win'
+    compile 'org.openjfx:javafx-fxml:11:win'
+    compile 'org.openjfx:javafx-graphics:11:win'
+    
+}
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = "13"
+    modules = [ 'javafx.controls','javafx.graphics','javafx.fxml'  ]
+}
+
+mainClassName = 'Main'
+
+runtime {
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+    
+   jpackage {
+        jpackageHome = 'C:/Program Files/Java/openjdk-14-jpackage+1-49_windows-x64_bin/'
+        
+        if(org.gradle.internal.os.OperatingSystem.current().windows) {
+            installerType = 'msi'
+            imageOptions = []
+            installerOptions = ['--win-per-user-install',
+                '--win-dir-chooser',
+                '--win-menu',
+                '--win-shortcut',
+                '--verbose',
+                '--description','Test of proguard with jPackage',
+                '--name', 'Test-ProguardJPackage',
+                '--vendor','DoesItMatter']
+        }
+    }
+    
+}
+
+compileJava {
+    doFirst {
+        options.compilerArgs = [
+                '--module-path', classpath.asPath,
+                 '--add-modules', 'javafx.controls,javafx.fxml'
+        ]
+    }
+}
+
+run {
+    doFirst {
+        jvmArgs = [
+                '--module-path', classpath.asPath,
+                 '--add-modules', 'javafx.controls,javafx.fxml'
+        ]
+    }
+}
+
+
+
+jar {
+    dependsOn 'cleanAfterProguard'
+    manifest {
+        attributes(
+                'Main-Class': 'org.openjfx.Launcher'
+        )
+    }
+    from zipTree("${buildDir}/proguard/output.jar")
+}
+
+task cleanClasses(type: Delete) {
+    delete "${buildDir}/classes/java/main"
+    delete "${buildDir}/resources/java/main"
+}
+
+classes.dependsOn(cleanClasses)
+
+// 2.2 Add proguard task
+task proguard(type: proguard.gradle.ProGuardTask, dependsOn: classes) {
+    injars project.sourceSets.main.output
+    outjars "${buildDir}/proguard/output.jar"
+
+    libraryjars project.sourceSets.main.compileClasspath
+
+    configuration 'proguard.conf'
+}
+
+// 2.3 Clean after proguard task
+task cleanAfterProguard(type: Delete, dependsOn: proguard) {
+    delete "${buildDir}/classes/java/main"
+    delete "${buildDir}/resources/java/main"
+}
+
+// 2.4 Extract output jar to buildDir 
+task unpackProguardOutput (type: Copy, dependsOn: cleanAfterProguard) {
+    from zipTree("${buildDir}/proguard/output.jar")
+    into file("${buildDir}/classes/java/main")
+}
+
+
+// 3. Create a task to run the app with the proguarded buildDir
+task runProguard(type: JavaExec, dependsOn: unpackProguardOutput) {
+    classpath = sourceSets.main.runtimeClasspath
+    jvmArgs = ['--module-path', classpath.asPath,
+               '--add-modules', 'javafx.controls,javafx.fxml' ]
+    main = 'Main' // <-- this name will depend on the proguard result
+}
+
+
+
+jar.dependsOn(unpackProguardOutput)
