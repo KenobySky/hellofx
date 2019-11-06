@@ -26,9 +26,22 @@ dependencies {
     compile "org.json:json:20180813"
     compile "mysql:mysql-connector-java:8.0.17"
     compile "org.jasypt:jasypt:1.9.3"
-    compile "com.mchange:c3p0:0.9.5.4"
+    
     compile "com.sun.mail:javax.mail:1.6.2"
     compile "commons-validator:commons-validator:1.6"
+    //compile "com.mchange:c3p0:0.9.5.4"
+    //https://mvnrepository.com/artifact/org.hibernate/hibernate-gradle-plugin
+    //compile group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '5.4.8.Final'
+    
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0
+    compile "org.hibernate:hibernate-c3p0:5.4.7.Final"
+    
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-envers
+    compile 'org.hibernate:hibernate-envers:5.4.8.Final'
+
+
+    
+
     
 }
 
@@ -46,7 +59,7 @@ mainClassName = 'Main'
 runtime {
     options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
     
-   jpackage {
+    jpackage {
         jpackageHome = 'C:/Program Files/Java/openjdk-14-jpackage+1-49_windows-x64_bin/'
         
         if(org.gradle.internal.os.OperatingSystem.current().windows) {
@@ -64,8 +77,6 @@ runtime {
     }
     
 }
-
-
 
 
 
