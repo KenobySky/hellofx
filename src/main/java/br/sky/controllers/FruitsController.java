@@ -223,6 +223,10 @@ public class FruitsController  {
 
         loadFruits();
 
+        
+        //GlyphFont fontAwesome = GlyphFontRegistry.font("FontAwesome");
+        //fontAwesome.create("fa-address-card");
+        
     }
 
     /**

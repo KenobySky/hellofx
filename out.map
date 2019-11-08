@@ -1,36 +1,36 @@
 Main -> Main:
     9:9:void <init>() -> <init>
     11:12:void main(java.lang.String[]) -> main
-br.sky.DAO.AppleDAO -> a.a.a.A:
+br.sky.DAO.AppleDAO -> br.sky.DAO.AppleDAO:
     13:14:void <init>() -> <init>
-br.sky.DAO.DAO -> a.a.a.B:
-    java.lang.Class persistedClass -> a
+br.sky.DAO.DAO -> br.sky.DAO.DAO:
+    java.lang.Class persistedClass -> persistedClass
     15:16:void <init>() -> <init>
     19:21:void <init>(java.lang.Class) -> <init>
-    25:38:java.lang.Object add(java.lang.Object,javax.persistence.EntityManager) -> a
-    44:60:java.util.ArrayList addAll(java.util.ArrayList,javax.persistence.EntityManager) -> a
-    66:80:java.util.ArrayList updateAll(java.util.ArrayList,javax.persistence.EntityManager) -> b
-    85:99:javafx.collections.ObservableList updateAll(javafx.collections.ObservableList,javax.persistence.EntityManager) -> a
-    104:116:java.lang.Object update(java.lang.Object,javax.persistence.EntityManager) -> b
-    121:133:void delete(java.lang.Object,javax.persistence.EntityManager) -> c
-    137:151:void delete(java.io.Serializable,javax.persistence.EntityManager) -> a
-    155:166:java.util.ArrayList getList(javax.persistence.EntityManager) -> a
-    171:178:java.lang.Object find(java.io.Serializable,javax.persistence.EntityManager) -> b
-br.sky.DAO.FruitDAO -> a.a.a.C:
+    25:38:java.lang.Object add(java.lang.Object,javax.persistence.EntityManager) -> add
+    44:60:java.util.ArrayList addAll(java.util.ArrayList,javax.persistence.EntityManager) -> addAll
+    66:80:java.util.ArrayList updateAll(java.util.ArrayList,javax.persistence.EntityManager) -> updateAll
+    85:99:javafx.collections.ObservableList updateAll(javafx.collections.ObservableList,javax.persistence.EntityManager) -> updateAll
+    104:116:java.lang.Object update(java.lang.Object,javax.persistence.EntityManager) -> update
+    121:133:void delete(java.lang.Object,javax.persistence.EntityManager) -> delete
+    137:151:void delete(java.io.Serializable,javax.persistence.EntityManager) -> delete
+    155:166:java.util.ArrayList getList(javax.persistence.EntityManager) -> getList
+    171:178:java.lang.Object find(java.io.Serializable,javax.persistence.EntityManager) -> find
+br.sky.DAO.FruitDAO -> br.sky.DAO.FruitDAO:
     13:14:void <init>() -> <init>
-br.sky.DAO.HibernateUtil -> a.a.a.D:
-    org.hibernate.cfg.Configuration cfg -> a
-    org.hibernate.SessionFactory sessions -> b
+br.sky.DAO.HibernateUtil -> br.sky.DAO.HibernateUtil:
+    org.hibernate.cfg.Configuration cfg -> cfg
+    org.hibernate.SessionFactory sessions -> sessions
     11:11:void <init>() -> <init>
-    18:41:void initHibernate() -> a
-    44:44:javax.persistence.EntityManager getEntityManager() -> b
-    49:60:void dispose() -> c
-    63:63:org.hibernate.cfg.Configuration getCfg() -> d
-    67:67:org.hibernate.SessionFactory getSessions() -> e
-br.sky.DAO.HibernateUtil$1 -> a.a.a.D$1:
+    18:41:void initHibernate() -> initHibernate
+    44:44:javax.persistence.EntityManager getEntityManager() -> getEntityManager
+    49:60:void dispose() -> dispose
+    63:63:org.hibernate.cfg.Configuration getCfg() -> getCfg
+    67:67:org.hibernate.SessionFactory getSessions() -> getSessions
+br.sky.DAO.HibernateUtil$1 -> br.sky.DAO.HibernateUtil$1:
     29:29:void <init>() -> <init>
     33:38:void run() -> run
-br.sky.controllers.FruitsController -> a.a.b.A:
+br.sky.controllers.FruitsController -> br.sky.a.A:
     javafx.scene.control.TableColumn fruitId -> fruitId
     javafx.scene.control.TableColumn fruitColor -> fruitColor
     javafx.scene.control.TableView fruitsTable -> fruitsTable
@@ -44,109 +44,109 @@ br.sky.controllers.FruitsController -> a.a.b.A:
     105:151:void removeFruit(javafx.event.ActionEvent) -> removeFruit
     156:192:void saveFruits(javafx.event.ActionEvent) -> saveFruits
     196:200:void undoLastAction(javafx.event.ActionEvent) -> undoLastAction
-    204:226:void initialize() -> initialize
-    236:273:javafx.collections.ObservableList loadFruits() -> a
-    278:278:void dispose() -> b
+    204:230:void initialize() -> initialize
+    240:277:javafx.collections.ObservableList loadFruits() -> a
+    282:282:void dispose() -> b
     215:217:void lambda$initialize$1(javafx.scene.control.TableColumn$CellEditEvent) -> a
     209:211:void lambda$initialize$0(javafx.scene.control.TableColumn$CellEditEvent) -> b
-br.sky.controllers.FruitsController$1 -> a.a.b.A$1:
+br.sky.controllers.FruitsController$1 -> br.sky.a.A$1:
     br.sky.models.Fruit val$fruit -> a
     br.sky.controllers.FruitsController this$0 -> b
     64:64:void <init>(br.sky.controllers.FruitsController,br.sky.models.Fruit) -> <init>
     67:73:java.lang.Boolean call() -> a
     64:64:java.lang.Object call() -> call
-br.sky.controllers.FruitsController$10 -> a.a.b.A$2:
+br.sky.controllers.FruitsController$10 -> br.sky.a.A$2:
     br.sky.controllers.FruitsController this$0 -> a
     168:168:void <init>(br.sky.controllers.FruitsController) -> <init>
     171:172:void handle(javafx.event.Event) -> handle
-br.sky.controllers.FruitsController$11 -> a.a.b.A$3:
+br.sky.controllers.FruitsController$11 -> br.sky.a.A$3:
     javafx.concurrent.Task val$task -> a
     br.sky.controllers.FruitsController this$0 -> b
     175:175:void <init>(br.sky.controllers.FruitsController,javafx.concurrent.Task) -> <init>
     178:180:void handle(javafx.event.Event) -> handle
-br.sky.controllers.FruitsController$12 -> a.a.b.A$4:
+br.sky.controllers.FruitsController$12 -> br.sky.a.A$4:
     br.sky.controllers.FruitsController this$0 -> a
     183:183:void <init>(br.sky.controllers.FruitsController) -> <init>
     186:187:void handle(javafx.event.Event) -> handle
-br.sky.controllers.FruitsController$13 -> a.a.b.A$5:
+br.sky.controllers.FruitsController$13 -> br.sky.a.A$5:
     br.sky.controllers.FruitsController this$0 -> a
-    236:236:void <init>(br.sky.controllers.FruitsController) -> <init>
-    240:245:java.lang.Boolean call() -> a
-    236:236:java.lang.Object call() -> call
-br.sky.controllers.FruitsController$14 -> a.a.b.A$6:
+    240:240:void <init>(br.sky.controllers.FruitsController) -> <init>
+    244:249:java.lang.Boolean call() -> a
+    240:240:java.lang.Object call() -> call
+br.sky.controllers.FruitsController$14 -> br.sky.a.A$6:
     br.sky.controllers.FruitsController this$0 -> a
-    249:249:void <init>(br.sky.controllers.FruitsController) -> <init>
-    252:253:void handle(javafx.event.Event) -> handle
-br.sky.controllers.FruitsController$15 -> a.a.b.A$7:
+    253:253:void <init>(br.sky.controllers.FruitsController) -> <init>
+    256:257:void handle(javafx.event.Event) -> handle
+br.sky.controllers.FruitsController$15 -> br.sky.a.A$7:
     javafx.concurrent.Task val$task -> a
     br.sky.controllers.FruitsController this$0 -> b
-    256:256:void <init>(br.sky.controllers.FruitsController,javafx.concurrent.Task) -> <init>
-    259:261:void handle(javafx.event.Event) -> handle
-br.sky.controllers.FruitsController$16 -> a.a.b.A$8:
+    260:260:void <init>(br.sky.controllers.FruitsController,javafx.concurrent.Task) -> <init>
+    263:265:void handle(javafx.event.Event) -> handle
+br.sky.controllers.FruitsController$16 -> br.sky.a.A$8:
     br.sky.controllers.FruitsController this$0 -> a
-    264:264:void <init>(br.sky.controllers.FruitsController) -> <init>
-    267:268:void handle(javafx.event.Event) -> handle
-br.sky.controllers.FruitsController$2 -> a.a.b.A$9:
+    268:268:void <init>(br.sky.controllers.FruitsController) -> <init>
+    271:272:void handle(javafx.event.Event) -> handle
+br.sky.controllers.FruitsController$2 -> br.sky.a.A$9:
     br.sky.controllers.FruitsController this$0 -> a
     77:77:void <init>(br.sky.controllers.FruitsController) -> <init>
     80:81:void handle(javafx.event.Event) -> handle
-br.sky.controllers.FruitsController$3 -> a.a.b.A$10:
+br.sky.controllers.FruitsController$3 -> br.sky.a.A$10:
     javafx.concurrent.Task val$task -> a
     br.sky.controllers.FruitsController this$0 -> b
     84:84:void <init>(br.sky.controllers.FruitsController,javafx.concurrent.Task) -> <init>
     87:89:void handle(javafx.event.Event) -> handle
-br.sky.controllers.FruitsController$4 -> a.a.b.A$11:
+br.sky.controllers.FruitsController$4 -> br.sky.a.A$11:
     br.sky.controllers.FruitsController this$0 -> a
     92:92:void <init>(br.sky.controllers.FruitsController) -> <init>
     95:96:void handle(javafx.event.Event) -> handle
-br.sky.controllers.FruitsController$5 -> a.a.b.A$12:
+br.sky.controllers.FruitsController$5 -> br.sky.a.A$12:
     int val$i -> a
     br.sky.controllers.FruitsController this$0 -> b
     108:108:void <init>(br.sky.controllers.FruitsController,int) -> <init>
     111:120:java.lang.Boolean call() -> a
     108:108:java.lang.Object call() -> call
-br.sky.controllers.FruitsController$6 -> a.a.b.A$13:
+br.sky.controllers.FruitsController$6 -> br.sky.a.A$13:
     br.sky.controllers.FruitsController this$0 -> a
     124:124:void <init>(br.sky.controllers.FruitsController) -> <init>
     127:128:void handle(javafx.event.Event) -> handle
-br.sky.controllers.FruitsController$7 -> a.a.b.A$14:
+br.sky.controllers.FruitsController$7 -> br.sky.a.A$14:
     javafx.concurrent.Task val$task -> a
     br.sky.controllers.FruitsController this$0 -> b
     131:131:void <init>(br.sky.controllers.FruitsController,javafx.concurrent.Task) -> <init>
     134:136:void handle(javafx.event.Event) -> handle
-br.sky.controllers.FruitsController$8 -> a.a.b.A$15:
+br.sky.controllers.FruitsController$8 -> br.sky.a.A$15:
     br.sky.controllers.FruitsController this$0 -> a
     139:139:void <init>(br.sky.controllers.FruitsController) -> <init>
     142:143:void handle(javafx.event.Event) -> handle
-br.sky.controllers.FruitsController$9 -> a.a.b.A$16:
+br.sky.controllers.FruitsController$9 -> br.sky.a.A$16:
     br.sky.controllers.FruitsController this$0 -> a
     156:156:void <init>(br.sky.controllers.FruitsController) -> <init>
     159:164:java.lang.Boolean call() -> a
     156:156:java.lang.Object call() -> call
-br.sky.models.Apple -> a.a.c.A:
+br.sky.models.Apple -> br.sky.models.Apple:
     17:18:void <init>() -> <init>
     21:22:void <init>(long,java.lang.String) -> <init>
-    28:29:void setColor(java.lang.String) -> a
-    33:33:java.lang.String getColor() -> a
-    38:39:void setId(long) -> a
-    43:43:long getId() -> b
-br.sky.models.Fruit -> a.a.c.B:
-    long id -> a
-    java.lang.String color -> b
+    28:29:void setColor(java.lang.String) -> setColor
+    33:33:java.lang.String getColor() -> getColor
+    38:39:void setId(long) -> setId
+    43:43:long getId() -> getId
+br.sky.models.Fruit -> br.sky.models.Fruit:
+    long id -> id
+    java.lang.String color -> color
     23:24:void <init>() -> <init>
     26:29:void <init>(long,java.lang.String) -> <init>
-    32:32:long getId() -> b
-    36:37:void setId(long) -> a
-    40:40:java.lang.String getColor() -> a
-    44:45:void setColor(java.lang.String) -> a
-br.sky.tools.Executor -> a.a.d.A:
+    32:32:long getId() -> getId
+    36:37:void setId(long) -> setId
+    40:40:java.lang.String getColor() -> getColor
+    44:45:void setColor(java.lang.String) -> setColor
+br.sky.tools.Executor -> br.sky.b.A:
     java.util.concurrent.ExecutorService executor -> a
     10:10:void <init>() -> <init>
     27:27:java.util.concurrent.ExecutorService getExecutorService() -> a
     32:37:void dispose() -> b
     16:21:java.lang.Thread lambda$static$0(java.lang.Runnable) -> a
     15:24:void <clinit>() -> <clinit>
-br.sky.tools.MyTools -> a.a.d.B:
+br.sky.tools.MyTools -> br.sky.b.B:
     int DEFAULT_WIDTH -> a
     int DEFAULT_HEIGHT -> b
     43:43:void <init>() -> <init>
@@ -185,7 +185,7 @@ br.sky.tools.MyTools -> a.a.d.B:
     504:526:boolean contains(java.lang.String,java.lang.Object) -> a
     530:552:boolean equals(java.lang.String,java.lang.Object) -> b
     64:71:void lambda$revertCheck$0(org.controlsfx.control.CheckListView,java.lang.Integer) -> a
-br.sky.views.HelloFX -> a.a.e.A:
+br.sky.views.HelloFX -> br.sky.c.A:
     12:12:void <init>() -> <init>
     19:32:void start(javafx.stage.Stage) -> start
     35:36:void main(java.lang.String[]) -> a
